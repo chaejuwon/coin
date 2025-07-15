@@ -6,13 +6,13 @@ const ModeBtn = styled.button`
   top:15px;
   left:15px;
 `;
-const [isDarkMode, setIsDarkMode] = useState(false);
-
-const toggleTheme = () => {
-  setIsDarkMode(prev => !prev);
-};
 
 function Button() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleTheme = () => {
+    setIsDarkMode(prev => !prev);
+  };
   return (
     <ModeBtn onClick={toggleTheme}>테마변경</ModeBtn>
   );
