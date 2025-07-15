@@ -10,10 +10,10 @@ function Router({  }:IRouterProps) {
     return (
         <BrowserRouter>
             <Switch>
-                <Route path="/:coinId">
+                <Route path="/coin/:coinId">
                     <Coin />
                 </Route>
-                <Route>
+                <Route path="/coin">
                     <Coins />
                 </Route>
             </Switch>

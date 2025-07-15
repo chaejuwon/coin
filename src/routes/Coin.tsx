@@ -227,21 +227,21 @@ function Coin({  }: IRouterProps) {
             <Tab
               isActive={chartMatch !== null}>
               <Link
-                to={`/${coinId}/chart`}>Chart</Link>
+                to={`/coin/${coinId}/chart`}>Chart</Link>
             </Tab>
             <Tab
               isActive={priceMatch !== null}>
               <Link
-                to={`/${coinId}/price`}>Price</Link>
+                to={`/coin/${coinId}/price`}>Price</Link>
             </Tab>
           </Tabs>
           <Switch>
             <Route
-              path={`/:coinId/chart`}>
+              path={`/coin/:coinId/chart`}>
               <Chart coinId={coinId} />
             </Route>
             <Route
-              path={`/:coinId/price`}>
+              path={`/coin/:coinId/price`}>
               <Price coinId={coinId} />
             </Route>
           </Switch>
