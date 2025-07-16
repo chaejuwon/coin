@@ -6,6 +6,7 @@ import { fetchCoins } from "../api";
 import { Helmet } from "react-helmet-async";
 import { useSetRecoilState } from "recoil";
 import { isDarkAtom } from "../atoms";
+import { FaHouse } from "react-icons/fa6";
 
 const Container = styled.div`
   padding: 0px 20px;
@@ -60,9 +61,29 @@ const Img = styled.img`
 `;
 
 const ModeBtn = styled.button`
-
+  position: fixed;
+  top:10px;
+  right:10px;
+  border: 1px solid ${(props) => props.theme.textColor};
+  color: ${props => props.theme.textColor};
+  background: transparent;
+  padding: 7px 14px;
+  border-radius: 5px;
+  transition: all .3s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    background: ${(props) => props.theme.textColor};
+    color: ${props => props.theme.bgColor};
+  }
 `;
-
+const HomeBtn = styled(Link)`
+  position: fixed;
+  top:10px;
+  left:10px;
+  svg {
+    color: ${(props) => props.theme.textColor};
+  }
+`;
 interface CoinInterface {
   id: string,
   name: string,
@@ -90,7 +111,8 @@ function Coins({}: IRouterProps) {
       </Helmet>
       <Header>
         <Title>코인</Title>
-        <ModeBtn onClick={onClickAtom}>테마변경</ModeBtn>
+        {/*<ModeBtn onClick={onClickAtom}>테마변경</ModeBtn>*/}
+        {/*<HomeBtn to="/coin"><FaHouse fontSize={25} /></HomeBtn>*/}
       </Header>
       {isLoading ? <Loading>Loading...</Loading> : (
         <CoinsList>
